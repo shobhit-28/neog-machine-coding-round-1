@@ -1,0 +1,22 @@
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 0 8px;
+    height: 2.5rem;
+    padding: 0.25rem;
+    position: fixed;
+    top: 0;
+}
+
+.navbar .navigator {
+    padding: 0.5rem;
+    width: 40vw;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.navbar .navigator:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 8px;
+}

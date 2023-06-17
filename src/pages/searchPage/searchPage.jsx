@@ -1,11 +1,11 @@
 /* eslint-disable no-unsafe-optional-chaining */
 import { useState } from 'react';
-import { bookArray } from '../../data/bookData'
 import './searchPage.css'
 import { BookCard } from '../../components/bookCards/bookCard';
+import { bookArray } from '../../data/bookData';
 
 export const SearchPage = () => {
-    const allBooks = bookArray;
+    const allBooks = bookArray
 
     const [searchResults, setSearchResults] = useState([])
 

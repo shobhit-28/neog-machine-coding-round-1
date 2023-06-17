@@ -10,15 +10,17 @@ export const ReducerContext = createContext();
 export const ReducerContextHandler = ({children}) => {
     const {
         ADD_TO_READ,
-    //     ADD_TO_CURRENTLY_READING,
-    //     ADD_TO_INTERESTED
+        ADD_TO_CURRENTLY_READING,
+        ADD_TO_INTERESTED,
+        ADD_TO_NONE
     } = types
     
     const initialState = {
         allBooks: bookArray,
         read: bookArray.filter(({category}) => category === 'read' ),
         interested: bookArray.filter(({category}) => category === 'interested' ),
-        reading: bookArray.filter(({category}) => category === 'reading' )
+        reading: bookArray.filter(({category}) => category === 'reading' ),
+        none: bookArray.filter(({category}) => category === 'none' ),
     }
 
     const [state, dispatch] = useReducer(reducer, initialState);
@@ -29,13 +31,36 @@ export const ReducerContextHandler = ({children}) => {
             payload: book
         })
     }
+    const addToInterested = (book) => {
+        dispatch({
+            type: ADD_TO_INTERESTED,
+            payload: book
+        })
+    }
+    const addToReading = (book) => {
+        dispatch({
+            type: ADD_TO_CURRENTLY_READING,
+            payload: book
+        })
+    }
+    const addToNone = (book) => {
+        dispatch({
+            type: ADD_TO_NONE,
+            payload: book
+        })
+    }
 
     return (
         <ReducerContext.Provider value={{
             addToRead,
+            addToInterested,
+            addToNone,
+            addToReading,
+            allBooks: state?.allBooks,
             read: state?.read,
             interested: state?.interested,
-            reading: state?.reading
+            reading: state?.reading,
+            none: state.none
         }}>
             {children}
         </ReducerContext.Provider>

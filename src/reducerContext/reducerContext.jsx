@@ -16,9 +16,9 @@ export const ReducerContextHandler = ({children}) => {
     
     const initialState = {
         allBooks: bookArray,
-        read: [],
-        interested: [],
-        reading: []
+        read: bookArray.filter(({category}) => category === 'read' ),
+        interested: bookArray.filter(({category}) => category === 'interested' ),
+        reading: bookArray.filter(({category}) => category === 'reading' )
     }
 
     const [state, dispatch] = useReducer(reducer, initialState);
@@ -33,7 +33,9 @@ export const ReducerContextHandler = ({children}) => {
     return (
         <ReducerContext.Provider value={{
             addToRead,
-            read: state?.read
+            read: state?.read,
+            interested: state?.interested,
+            reading: state?.reading
         }}>
             {children}
         </ReducerContext.Provider>

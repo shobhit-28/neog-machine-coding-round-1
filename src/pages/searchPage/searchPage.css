@@ -1,0 +1,4 @@
+.search-page .card-container {
+    display: flex;
+    flex-wrap: wrap;
+}

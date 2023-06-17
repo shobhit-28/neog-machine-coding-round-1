@@ -29,3 +29,7 @@ body {
 .page {
     margin-top: 3.5rem;
 }
+
+img {
+    width: 100%;
+}

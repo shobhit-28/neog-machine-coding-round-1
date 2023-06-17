@@ -30,8 +30,10 @@ export const SearchPage = () => {
             </div>
             <div className="card-container">
                 {searchResults.length !== 0
-                    &&
+                    ?
                     searchResults.map((book) => <BookCard book={book} key={book.id} />)
+                    :
+                    allBooks.map((book) => <BookCard book={book} key={book.id} />)
                 }
             </div>
         </div>

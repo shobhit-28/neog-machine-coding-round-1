@@ -1,0 +1,24 @@
+.home-page .shelf {
+    margin: 1rem 5rem;
+    min-height: 20vh;
+}
+
+.home-page .shelf .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home-page .shelf .declaration {
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+.home-page .shelf .head {
+    text-align: center;
+    font-size: 1.75rem;
+}
+

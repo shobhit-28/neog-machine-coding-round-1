@@ -17,7 +17,7 @@ export const SearchPage = () => {
                 [
                     ...allBooks?.filter((user) => user?.bookName?.slice(0, event?.target?.value.length).toLowerCase() === event?.target?.value.toLowerCase()),
                     ...allBooks?.filter((user) => user?.bookName?.slice(0, event?.target?.value.length).toLowerCase() !== event?.target?.value.toLowerCase())
-                        ?.filter((user) => user?.bookName.toLowerCase()?.includes(event?.target?.value?.toLowerCase()))
+                        ?.filter((user) => user?.bookName.concat(user?.writer).toLowerCase()?.includes(event?.target?.value?.toLowerCase()))
                 ]
             )
         }
@@ -30,10 +30,8 @@ export const SearchPage = () => {
             </div>
             <div className="card-container">
                 {searchResults.length !== 0
-                    ?
+                    &&
                     searchResults.map((book) => <BookCard book={book} key={book.id} />)
-                    :
-                    allBooks.map((book) => <BookCard book={book} key={book.id} />)
                 }
             </div>
         </div>

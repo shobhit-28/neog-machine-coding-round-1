@@ -4,7 +4,7 @@ import './bookCard.css'
 import { ReducerContext } from '../../reducerContext/reducerContext'
 
 export const BookCard = ({ book }) => {
-    const {addToRead, addToInterested, addToReading, addToNone, read, interested, reading, none} = useContext(ReducerContext)
+    const { addToRead, addToInterested, addToReading, addToNone, read, interested, reading, none } = useContext(ReducerContext)
 
     const changeHandler = (event) => {
         if (event.target.value === 'read') {
@@ -25,14 +25,14 @@ export const BookCard = ({ book }) => {
         <div className="book-card">
             <div className="img-container">
                 <img src={book.img} alt={book.bookName} />
-                <select name="categories" id="categories" onChange={(event) => changeHandler(event)}>
-                    {/* <option value="" disabled selected>Categories...</option> */}
-                    <option value="read">{read.includes(book) && '✔️'} Read</option>
-                    <option value="interested" selected={interested.includes(book)}>{interested.includes(book) && '✔️'}Want to Read</option>
-                    <option value="reading" selected={reading.includes(book)}>{reading.includes(book) && '✔️'}Currently Reading</option>
-                    <option value="none" selected={none.includes(book)}>{none.includes(book) && '✔️'}None</option>
-                </select>
             </div>
+            <select name="categories" id="categories" onChange={(event) => changeHandler(event)} className='categories'>
+                {/* <option value="" disabled selected>Categories...</option> */}
+                <option value="read">{read.includes(book) && '✔️'} Read</option>
+                <option value="interested" selected={interested.includes(book)}>{interested.includes(book) && '✔️'}Want to Read</option>
+                <option value="reading" selected={reading.includes(book)}>{reading.includes(book) && '✔️'}Currently Reading</option>
+                <option value="none" selected={none.includes(book)}>{none.includes(book) && '✔️'}None</option>
+            </select>
             <div className="title-author">
                 <p className="title">{book.bookName}</p>
                 <p className="author">{book.writer}</p>

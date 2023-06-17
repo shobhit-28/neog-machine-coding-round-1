@@ -3,10 +3,14 @@
     justify-content: space-evenly;
     width: 100vw;
     box-shadow: rgba(0, 0, 0, 0.4) 0 0 8px;
-    height: 2.5rem;
+    /* height: 2.5rem; */
     padding: 0.25rem;
     position: fixed;
     top: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    font-size: 1.5rem;
+    z-index: 1;
 }
 
 .navbar .navigator {
@@ -18,5 +22,5 @@
 }
 
 .navbar .navigator:hover {
-    box-shadow: rgba(0, 0, 0, 0.2) 0 0 8px;
+    box-shadow: rgba(255, 255, 255, 0.4) 0 0 8px;
 }
